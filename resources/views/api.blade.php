@@ -7,7 +7,7 @@
 
 }
 body{
-    background: #eaf655;
+    background: #d3d3d3;
 }
 .row{
     height: max-content;
@@ -38,7 +38,7 @@ input[type=text]{
 button{
     height: 2.8rem;
     border-radius: 2rem;
-    background: rgb(242,79,241);
+    background: #32cd32;
     background: linear-gradient(342deg, rgba(242,79,241,1) 0%, rgba(0,237,255,1) 70%);
 
 }
@@ -60,7 +60,7 @@ button p{
     <div class="container">
         <div class="row">
             <div id="header">
-                <h1>IDENTIFICAR GENERO</h1>
+                <h1>IDENTIFICAR EDAD</h1>
             </div>
             <div id="instruction">
                 <p> INGRESE SU NOMRE</p>
@@ -76,7 +76,35 @@ button p{
         </div>
     </div>
     <script>
-        
+        var output = document.getElementById('output')
+document.getElementById('btn').addEventListener('click',predictName);
+let name = document.getElementById('nameInput');
+document.getElementById('nameInput').addEventListener('change',checkName)
+function predictName(){
+         let name = nameInput.value;
+
+         fetch('https://api.agify.io?name='+name,{ method:'GET'})
+         .then(function(response){return response.json();})
+         .then(data => {
+             if (name != '') {
+                output.innerHTML = "I guess &#129300 your age is " + data.age;
+                output.style.display = 'block';
+                 console.log(data.age);
+             }else{
+                output.style.display = 'none'; 
+             }
+
+
+         })
+         .catch(err => console.log(err));
+     }
+
+ function checkName(){
+     let name = nameInput.value;
+     if (name == '') {
+        output.style.display = 'none'; 
+     }
+}
     </script>
 
 </body>
