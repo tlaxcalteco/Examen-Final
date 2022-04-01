@@ -1,3 +1,8 @@
+<h1>Pedro Tlaxcalteco Morales</h1>
+<h1>Grupo: 3522IS</h1>
+<h1>INGENIERIA EN SOFTWARE</h1>
+<a href="https://stikerbar.herokuapp.com/inicio"></a>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
